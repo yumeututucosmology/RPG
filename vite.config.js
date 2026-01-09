@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: './', // Use relative paths
+    base: '/RPG/', // GitHub Pages repository name
     build: {
         rollupOptions: {
             input: {

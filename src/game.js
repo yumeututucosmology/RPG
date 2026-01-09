@@ -21,6 +21,11 @@ class Game {
     constructor() {
         // --- システム初期化 ---
         this.renderSystem = new RenderSystem();
+
+        // Clear Loading Text
+        const loading = document.getElementById('loading');
+        if (loading) loading.remove();
+
         this.inputManager = new InputManager();
         this.soundManager = new SoundManager();
         this.assetManager = new AssetManager();

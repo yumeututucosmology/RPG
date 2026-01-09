@@ -1,27 +1,30 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PaperRPG</title>
-    <style>
-      /* Styles moved to src/style.css */
-    </style>
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "./node_modules/three/build/three.module.js"
-        }
-      }
-    </script>
-    <script>
-      window.addEventListener('error', (event) => {
-        alert("Error: " + event.message + "\nCheck console (F12) for details.");
-      });
-    </script>
-  </head>
-  <body>
-    <!-- Point to the migrated game.js -->
-    <script type="module" src="/src/game.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PaperRPG</title>
+  <style>
+    /* Styles moved to src/style.css */
+  </style>
+  <style>
+    #loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: sans-serif;
+      font-size: 24px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading">Loading Game...</div>
+  <!-- Point to the migrated game.js -->
+  <script type="module" src="./src/game.js"></script>
+</body>
+
 </html>
