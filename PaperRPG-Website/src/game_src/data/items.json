@@ -1,0 +1,30 @@
+[
+  {
+    "id": "potion_s",
+    "name": "回復薬（小）",
+    "description": "HPを50回復する",
+    "effect_type": "heal",
+    "effect_value": "50"
+  },
+  {
+    "id": "potion_m",
+    "name": "回復薬（中）",
+    "description": "HPを150回復する",
+    "effect_type": "heal",
+    "effect_value": "150"
+  },
+  {
+    "id": "sword_iron",
+    "name": "鉄の剣",
+    "description": "ごく普通の鉄製の剣。",
+    "effect_type": "attack",
+    "effect_value": "10"
+  },
+  {
+    "id": "shield_wood",
+    "name": "木の盾",
+    "description": "心もとない木製の盾。",
+    "effect_type": "defense",
+    "effect_value": "5"
+  }
+]

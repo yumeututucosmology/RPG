@@ -1,0 +1,30 @@
+[
+  {
+    "id": "potion_s",
+    "name": "Small Potion",
+    "description": "Heals 50 HP",
+    "effect_type": "heal",
+    "effect_value": "50"
+  },
+  {
+    "id": "potion_m",
+    "name": "Medium Potion",
+    "description": "Heals 150 HP",
+    "effect_type": "heal",
+    "effect_value": "150"
+  },
+  {
+    "id": "sword_iron",
+    "name": "Iron Sword",
+    "description": "A standard iron sword.",
+    "effect_type": "attack",
+    "effect_value": "10"
+  },
+  {
+    "id": "shield_wood",
+    "name": "Wooden Shield",
+    "description": "A flimsy wooden shield.",
+    "effect_type": "defense",
+    "effect_value": "5"
+  }
+]
