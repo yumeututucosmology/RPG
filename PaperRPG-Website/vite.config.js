@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: '/paperrpg-website/', // Important for GitHub Pages deployment to subdirectories
+    base: '/RPG/', // Correct base path for https://yumeututucosmology.github.io/RPG/
     server: {
         port: 5174, // Keeping our development port
     },
