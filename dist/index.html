@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./assets/vite-DcBtz0py.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+  <title>PaperRPG - 異世界転移JKアクションRPG</title>
+  <link rel="stylesheet" crossorigin href="./assets/main-BQBisWxu.css">
+</head>
+
+<body>
+  <div id="app">
+    <nav class="paper-nav">
+      <div class="logo">PaperRPG</div>
+      <div class="links">
+        <a href="#hero">ホーム</a>
+        <a href="#story">世界観・ストーリー</a>
+        <a href="#characters">キャラクター</a>
+        <a href="#system">ゲームシステム</a>
+        <a href="#spec">製品情報</a>
+      </div>
+    </nav>
+
+    <section id="hero" class="paper-section hero-section">
+      <div class="hero-content">
+        <h1 class="marker-font">異世界転移JK<br>アクションRPG（仮）</h1>
+        <p class="subtitle">女子高生コンビが、紙の世界を救う！？<br>「コマンドバトル」×「アクション」のハイブリッドRPG。</p>
+        <!-- Play Button Added Here -->
+        <a href="game.html" id="start-game-btn" class="cta-button">今すぐ遊ぶ (Play Game)</a>
+        <br>
+        <div class="platform-badge">Windows PC (コントローラー推奨)</div>
+      </div>
+      <div class="hero-image">
+        <img src="./assets/player_stand-CgGBcY1K.png" alt="PaperRPG Hero" class="paper-cutout" />
+      </div>
+    </section>
+
+    <div class="paper-tear"></div>
+
+    <section id="story" class="paper-section">
+      <h2 class="marker-font">世界観・ストーリー</h2>
+      <div class="story-container">
+        <div class="story-text">
+          <h3>剣と魔法のファンタジー異世界へ！</h3>
+          <p>
+            ごく普通の女子高生、<b>明音（あかね）</b>と<b>麗湖（れいこ）</b>。<br>
+            ある日突然、二人は剣と魔法のファンタジー世界へ転移してしまいます。
+          </p>
+          <p>
+            元の世界へ帰る方法はただ一つ。<br>
+            魔王の支配からこの世界を救うこと。<br>
+            部活の道具（竹刀と弓）を武器に、デコボコ現役JKコンビの冒険が始まります！
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="paper-tear"></div>
+
+    <section id="characters" class="paper-section">
+      <h2 class="marker-font text-center">キャラクター</h2>
+      <p class="text-center subtitle">物語を紡ぐダブル主人公</p>
+
+      <div class="character-card">
+        <div class="char-image">
+          <img src="./assets/player_stand-CgGBcY1K.png" alt="明音">
+        </div>
+        <div class="char-info">
+          <h2 class="marker-font">明音 (Akane)</h2>
+          <p class="char-role">【ロール：アタッカー / パワー型】</p>
+          <p>
+            茶髪ツインテールの剣道部員。属性は<b>炎 (Fire)</b>。<br>
+            猪突猛進で天真爛漫。「細かいことは気にしない！」と、いつも麗湖を巻き込んでトラブルに飛び込んでいく。<br>
+            極度の暑がりで、冬でも薄着。
+          </p>
+          <div class="button-mapping akane-btn">
+            <span class="btn-icon">A</span> <strong>Aボタン担当</strong>：ジャンプ / インファイト攻撃
+          </div>
+        </div>
+      </div>
+
+      <div class="character-card reverse">
+        <div class="char-image">
+          <img src="./assets/player2_stand-BGb6uUZp.png" alt="麗湖">
+        </div>
+        <div class="char-info">
+          <h2 class="marker-font">麗湖 (Reiko)</h2>
+          <p class="char-role">【ロール：サポーター / テクニカル型】</p>
+          <p>
+            青髪ロングの弓道部員。属性は<b>氷 (Ice)</b>。<br>
+            冷静沈着な慎重派。「却下。リスクが高すぎる」とブレーキをかけるが、なんだかんだで明音には甘い。<br>
+            極度の寒がりで、夏でも厚着。
+          </p>
+          <div class="button-mapping reiko-btn">
+            <span class="btn-icon">B</span> <strong>Bボタン担当</strong>：遠距離攻撃 / 援護・防御
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="paper-tear"></div>
+
+    <section id="system" class="paper-section">
+      <h2 class="marker-font">ゲームシステム</h2>
+
+      <div class="system-block">
+        <h3>1. 探索：ザッピング＆スプリット</h3>
+        <p>
+          『マリオストーリー』のような箱庭マップを、2人は連なって移動します。<br>
+          しかし、一人では解けない仕掛けに遭遇したら……？
+        </p>
+        <ul class="feature-list">
+          <li><b>別行動（スプリット）</b>：Rボタン長押しで二人が分離！それぞれ別の場所へ移動できます。</li>
+          <li><b>ザッピング</b>：離れた場所にいる二人を、Rボタン一つで瞬時に切り替え。</li>
+          <li><b>協力アクション</b>：明音がスイッチを踏んでいる間に、麗湖が先へ進む……といった連携が重要です。</li>
+        </ul>
+      </div>
+
+      <div class="system-block">
+        <h3>2. バトル：アクション × コマンド</h3>
+        <p>
+          ターン制コマンドバトルに、リアルタイムのアクション要素が融合！
+        </p>
+        <div class="battle-features">
+          <div class="b-feat">
+            <h4>攻撃ターン</h4>
+            <p>コマンド選択後、タイミングよくボタンを押してダメージアップ！（アクションコマンド）</p>
+          </div>
+          <div class="b-feat">
+            <h4>防御ターン</h4>
+            <p>敵が「誰を狙っているか」を見極めて回避！<br>
+              明音が狙われたら<b>Aボタン</b>、麗湖が狙われたら<b>Bボタン</b>。<br>
+              とっさの判断が生死を分けます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="system-block">
+        <h3>3. 育成：パッチ（Patches）システム</h3>
+        <p>
+          装備画面はまるでパズルゲーム！？<br>
+          制服やバッグに見立てた「グリッド（盤面）」に、様々な形の<b>「パッチ（装備）」</b>を隙間なくはめ込みましょう。
+        </p>
+        <div class="patch-demo">
+          <div class="grid-preview">
+            <div class="patch p-1">攻撃UP</div>
+            <div class="patch p-2">HP強化</div>
+            <div class="patch p-3">新技</div>
+          </div>
+          <p class="caption">うまく組み合わせて、最強の女子高生を作り上げろ！</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="paper-tear"></div>
+
+    <section id="spec" class="paper-section item-list">
+      <h2 class="marker-font" style="font-size: 2rem;">製品情報</h2>
+      <table class="spec-table">
+        <tr>
+          <th>タイトル</th>
+          <td>異世界転移JKアクションRPG（仮）</td>
+        </tr>
+        <tr>
+          <th>ジャンル</th>
+          <td>アクションRPG</td>
+        </tr>
+        <tr>
+          <th>プラットフォーム</th>
+          <td>Windows PC</td>
+        </tr>
+        <tr>
+          <th>入力デバイス</th>
+          <td>ゲームコントローラー (Xbox配置推奨) / キーボード</td>
+        </tr>
+        <tr>
+          <th>プレイ人数</th>
+          <td>1人</td>
+        </tr>
+      </table>
+    </section>
+
+    <footer class="paper-footer">
+      <p>&copy; 2025 Paper RPG Project. All rights reserved.</p>
+    </footer>
+  </div>
+
+
+</body>
+
+</html>

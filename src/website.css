@@ -1,0 +1,532 @@
+:root {
+    --paper-bg: #fdfbf7;
+    --text-color: #2c3e50;
+    --accent-color: #d35400;
+    /* Burnt Orange */
+    --secondary-color: #2980b9;
+    /* Blue for Reiko/Links */
+    --font-main: 'Zen Kurenaido', sans-serif;
+    --tear-border: 2px dashed #bdc3c7;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--paper-bg);
+    background-image:
+        radial-gradient(#e0e0e0 1px, transparent 1px),
+        linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px, 40px 40px;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.8;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    margin-top: 0;
+}
+
+/* Navigation */
+.paper-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: var(--tear-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    transform: rotate(-2deg);
+    border: 2px solid var(--accent-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.links a {
+    margin-left: 1.2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+    min-height: 60vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../public/assets/title_bg.png');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+    transform: rotate(-1deg);
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: #586875;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+}
+
+.platform-badge {
+    display: inline-block;
+    background: #34495e;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+    transform: rotate(1deg);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(3deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(3deg);
+    }
+}
+
+.paper-cutout {
+    max-width: 100%;
+    max-height: 500px;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+    border: 5px solid white;
+    /* Sticker effect */
+    transform: rotate(3deg);
+    transition: transform 0.3s;
+    animation: float 6s ease-in-out infinite;
+}
+
+.paper-cutout:hover {
+    transform: rotate(0deg) scale(1.02);
+    animation-play-state: paused;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+    transform: rotate(-1deg);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.cta-button:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+    background-color: #e67e22;
+}
+
+/* Game Overlay */
+.game-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#game-canvas {
+    background: white;
+    border: 5px solid white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    max-height: 90%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-weight: bold;
+    color: var(--accent-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Common Sections */
+.paper-section {
+    padding: 5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Paper Tear Divider */
+.paper-tear {
+    height: 40px;
+    margin: 2rem 0;
+    background-image: linear-gradient(135deg, transparent 48%, #bdc3c7 49%, transparent 51%), linear-gradient(-135deg, transparent 48%, #bdc3c7 49%, transparent 51%);
+    background-size: 20px 20px;
+    background-repeat: repeat-x;
+    transform: scaleY(0.5);
+    opacity: 0.5;
+}
+
+/* Marker Headers */
+.marker-font {
+    font-family: var(--font-main);
+    position: relative;
+    display: inline-block;
+}
+
+h2.marker-font {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h2.marker-font::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-1deg);
+    width: 120px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 4px;
+    opacity: 0.5;
+}
+
+/* Story Section */
+.story-container {
+    background: white;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: rotate(-0.5deg);
+    position: relative;
+}
+
+.story-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 30px;
+    background: rgba(255, 235, 59, 0.4);
+    /* Tape */
+    opacity: 0.7;
+}
+
+/* Character Cards */
+.character-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    margin-bottom: 4rem;
+    padding: 3rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    gap: 3rem;
+    transform: rotate(1deg);
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.character-card.reverse {
+    flex-direction: row-reverse;
+    transform: rotate(-1deg);
+}
+
+.char-image img {
+    width: 250px;
+    filter: drop-shadow(5px 5px 0 rgba(0, 0, 0, 0.1));
+}
+
+.char-info h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.character-card.reverse .char-info h2 {
+    color: var(--secondary-color);
+}
+
+.char-role {
+    font-weight: bold;
+    color: #7f8c8d;
+    border-bottom: 2px dashed #bdc3c7;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.button-mapping {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f4f6f7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.akane-btn .btn-icon {
+    background: #e74c3c;
+}
+
+.reiko-btn .btn-icon {
+    background: #3498db;
+}
+
+/* System Section */
+.system-block {
+    background: white;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    border: 2px solid #34495e;
+    border-radius: 4px;
+    box-shadow: 8px 8px 0 #34495e;
+    /* Comic shadow */
+}
+
+.system-block h3 {
+    background: #34495e;
+    color: white;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    margin: -3.5rem 0 1.5rem -1rem;
+    transform: rotate(-2deg);
+    font-size: 1.5rem;
+}
+
+.feature-list li {
+    margin-bottom: 0.8rem;
+    list-style-type: square;
+}
+
+.battle-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.b-feat {
+    background: #fdfbf7;
+    padding: 1.5rem;
+    border: 2px dashed #bdc3c7;
+}
+
+.b-feat h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Patch Grid Demo */
+.patch-demo {
+    text-align: center;
+    background: #ecf0f1;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.grid-preview {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(2, 80px);
+    gap: 4px;
+    background: #333;
+    padding: 4px;
+    border: 4px solid #555;
+    margin-bottom: 1rem;
+}
+
+.patch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 0.9rem;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.p-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    background: #e74c3c;
+}
+
+/* L-shape approx */
+.p-2 {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    background: #3498db;
+}
+
+.p-3 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background: #2ecc71;
+}
+
+/* Spec Table */
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.spec-table th,
+.spec-table td {
+    padding: 1.2rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.spec-table th {
+    background: #f9f9f9;
+    width: 30%;
+    color: #7f8c8d;
+}
+
+/* Footer */
+.paper-footer {
+    text-align: center;
+    padding: 3rem;
+    background: #2c3e50;
+    color: #ecf0f1;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 3rem;
+    }
+
+    .paper-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .character-card,
+    .character-card.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .char-info h2 {
+        text-align: center;
+    }
+
+    .battle-features {
+        grid-template-columns: 1fr;
+    }
+}
