@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PaperRPG</title>
+    <style>
+      /* Styles moved to src/style.css */
+    </style>
+
+    <script>
+      window.addEventListener('error', (event) => {
+        alert("Error: " + event.message + "\nCheck console (F12) for details.");
+      });
+    </script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/game-DTeFRJ4n.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-BQBisWxu.css">
+  </head>
+  <body>
+    <!-- Point to the migrated game.js -->
+  </body>
+</html>
