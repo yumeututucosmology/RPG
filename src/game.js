@@ -40,7 +40,25 @@ class Game {
         this.world = new World(this.renderSystem.scene);
 
         // --- キャラクター生成（ダブル主人公） ---
-        const p1 = new Player(this.renderSystem.scene, this.inputManager, this.world, this.assetManager, this.soundManager, './assets/player_stand.png', './assets/player_jump.png', ['./assets/player_walk1.png', './assets/player_walk2.png'], './assets/akane_weapon.png', null, 'sword');
+        // Helper for GitHub Pages asset paths
+        const getAssetPath = (path) => {
+            const baseUrl = import.meta.env.BASE_URL; // e.g. '/RPG/' or './'
+            // Remove leading './' if present
+            const cleanPath = path.startsWith('./') ? path.substring(2) : path;
+            const finalPath = baseUrl + cleanPath;
+            console.log(`Loading Asset: ${path} -> ${finalPath}`);
+            return finalPath;
+        };
+
+        // --- キャラクター生成（ダブル主人公） ---
+        const p1 = new Player(this.renderSystem.scene, this.inputManager, this.world, this.assetManager, this.soundManager,
+            getAssetPath('assets/player_stand.png'),
+            getAssetPath('assets/player_jump.png'),
+            [getAssetPath('assets/player_walk1.png'), getAssetPath('assets/player_walk2.png')],
+            getAssetPath('assets/akane_weapon.png'),
+            null,
+            'sword'
+        );
 
         // Player 2 (Reiko) - 弓 (Bow)
         const p2 = new Player(
@@ -49,11 +67,11 @@ class Game {
             this.world,
             this.assetManager,
             this.soundManager,
-            './assets/player2_stand.png',
-            './assets/player2_jump.png',
-            ['./assets/player2_walk1.png', './assets/player2_walk2.png'],
-            './assets/reiko_weapon.png',    // Weapon Texture
-            './assets/reiko_arrow.png',     // Arrow Texture
+            getAssetPath('assets/player2_stand.png'),
+            getAssetPath('assets/player2_jump.png'),
+            [getAssetPath('assets/player2_walk1.png'), getAssetPath('assets/player2_walk2.png')],
+            getAssetPath('assets/reiko_weapon.png'),    // Weapon Texture
+            getAssetPath('assets/reiko_arrow.png'),     // Arrow Texture
             'bow',                          // Weapon Type
             (pos, vel, tex) => this.spawnArrow(pos, vel, tex) // onShoot Callback
         );
@@ -85,7 +103,7 @@ class Game {
         this.npc = new NPC(this.renderSystem.scene, this.world, new THREE.Vector3(15, 0, 15), this.assetManager);
 
         // Mob配置 (Character near Signboard)
-        this.mob = new NPC(this.renderSystem.scene, this.world, new THREE.Vector3(12, 0, 15), this.assetManager, './assets/mob.png');
+        this.mob = new NPC(this.renderSystem.scene, this.world, new THREE.Vector3(12, 0, 15), this.assetManager, getAssetPath('assets/mob.png'));
 
         // 看板の当たり判定を追加 (幅3m, 奥行2m, 高さ20m: ジャンプ等による乗り越え・めり込みを完全に防止)
         // プレイヤーが乗り越えられない高さに設定
