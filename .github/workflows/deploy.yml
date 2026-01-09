@@ -1,4 +1,4 @@
-name: Deploy Website and Game to Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -30,29 +30,11 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      # Build 3D Game (Root)
-      - name: Install Root Dependencies
+      - name: Install Dependencies
         run: npm ci
-      - name: Build 3D Game
+
+      - name: Build
         run: npm run build
-      # Result in ./dist
-
-      # Build Website
-      - name: Install Website Dependencies
-        run: |
-          cd PaperRPG-Website
-          npm ci
-      - name: Build Website
-        run: |
-          cd PaperRPG-Website
-          npm run build
-      # Result in ./PaperRPG-Website/dist
-
-      # Merge: Move Game dist to Website dist/game
-      - name: Merge Builds
-        run: |
-          mkdir -p PaperRPG-Website/dist/game
-          cp -r dist/* PaperRPG-Website/dist/game/
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -60,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './PaperRPG-Website/dist'
+          path: './dist'
           
       - name: Deploy to GitHub Pages
         id: deployment
